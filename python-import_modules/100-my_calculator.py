@@ -23,4 +23,3 @@ if __name__ == "__main__":
         print("{} * {} = {}".format(a, b, mul(a, b)))
     elif operation == "/":
         print("{} / {} = {}".format(a, b, div(a, b)))
-    sys.exit(0)
