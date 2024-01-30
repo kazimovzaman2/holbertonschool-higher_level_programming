@@ -21,6 +21,9 @@ def roman_to_int(roman_string):
     res = 0
     i = 0
 
+    if roman_string is None or not isinstance(roman_string, str):
+        return None
+
     while (i < len(roman_string)):
         s1 = value(roman_string[i])
 
