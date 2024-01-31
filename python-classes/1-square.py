@@ -5,4 +5,5 @@ class Square:
     """Doc for class"""
 
     def __init__(self, size):
-        self._size = size
+        """Doc for init"""
+        self.__size = size
