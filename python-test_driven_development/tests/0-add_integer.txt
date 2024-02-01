@@ -1,6 +1,7 @@
-"""
-Tests for add_integer function.
-"""
+===============================
+0. Integer addition module
+===============================
+
 
 Import module:
 ==============
@@ -8,7 +9,7 @@ Import module:
 
 
 Test cases with expected output:
-
+===============================
 >>> add_integer(1, 2)
 3
 
@@ -22,8 +23,8 @@ Test cases with expected output:
 98
 
 
-
 Test cases with exceptions:
+===============================
 >>> add_integer(4, "School")
 Traceback (most recent call last):
     ...
