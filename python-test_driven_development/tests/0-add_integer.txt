@@ -40,7 +40,7 @@ Traceback (most recent call last):
     ...
 OverflowError: cannot convert float infinity to integer
 
->>> add_integer(2, float('nan'))
+>>> add_integer(2, float('NaN'))
 Traceback (most recent call last):
     ...
-OverflowError: cannot convert float NaN to integer
+ValueError: cannot convert float NaN to integer
