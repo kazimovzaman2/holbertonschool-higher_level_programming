@@ -35,7 +35,7 @@ Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
->>> add_integer(1e100, 1e100)
+>>> add_integer(2, float('inf'))
 Traceback (most recent call last):
     ...
-OverflowError: int too large to convert to float
+OverflowError: cannot convert float infinity to integer
