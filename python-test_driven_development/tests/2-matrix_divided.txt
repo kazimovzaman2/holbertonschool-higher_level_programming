@@ -33,3 +33,20 @@ Test cases with exceptions:
 >>> print(matrix_divided(matrix, 3))
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> matrix = [
+...     [3, 6, 9],
+...     [12, 15, 18]
+... ]
+>>> print(matrix_divided(matrix, "salam"))
+Traceback (most recent call last):
+TypeError: div must be a number
+
+>>> matrix = [
+...     [3, 6, 9],
+...     [12, 15, 18]
+... ]
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
