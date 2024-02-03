@@ -13,15 +13,15 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    new_line = False
+    punctuations = [".", "?", ":"]
+    current_line = ""
 
-    for c in text:
-        print(c, end="")
-        if c in ".?:":
-            print("\n\n", end="")
-            new_line = True
-        elif c != " " and new_line:
-            print("\n", end="")
-            new_line = False
+    for char in text:
+        current_line += char
+        if char in punctuations:
+            print(current_line.strip())
+            print()  # Print an empty line
+            current_line = ""
 
-    print()
+    if current_line:
+        print(current_line.strip())
