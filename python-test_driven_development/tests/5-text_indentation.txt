@@ -10,6 +10,9 @@ Import module:
 
 Test cases with expected output:
 
+>>> text_indentation("Hello?")
+Hello?
+<BLANKLINE>
 
 
 
