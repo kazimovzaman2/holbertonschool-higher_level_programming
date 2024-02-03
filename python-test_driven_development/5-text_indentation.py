@@ -16,15 +16,11 @@ def text_indentation(text):
     for i in range(len(text)):
         if text[i] in [".", "?", ":"]:
             print(text[i], end="")
-            print("\n")
+            print()
         elif text[i] == " ":
-            for j in range(i, len(text)):
-                if text[j] != " ":
-                    continue
-                elif text[j] in [".", "?", ":", " "]:
-                    break
-                else:
-                    print(text[j], end="")
-                    break
+            continue
         else:
-            print(text[i], end="")
+            while i < len(text) and text[i] not in [".", "?", ":", " "]:
+                print(text[i], end="")
+                i += 1
+            i -= 1
