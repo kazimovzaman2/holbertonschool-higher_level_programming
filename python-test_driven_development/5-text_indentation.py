@@ -13,15 +13,9 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    punct = [".", "?", ":"]
-    current_line = ""
-
-    for char in text:
-        current_line += char
-        if char in punct:
-            print(current_line.rstrip())
-            print()
-            current_line = ""
-
-    if current_line:
-        print(current_line.rstrip())
+    for i in range(len(text)):
+        if text[i] in [".", "?", ":"]:
+            print(text[i], end="")
+            print("\n")
+        else:
+            print(text[i], end="")
