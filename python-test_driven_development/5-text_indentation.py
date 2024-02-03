@@ -14,16 +14,15 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     clean_text = text.strip()
-    result = ""
     new_line = False
 
     for c in clean_text:
-        result += c
+        print(c, end="")
         if c in ".?:":
-            result += "\n\n"
+            print("\n\n", end="")
             new_line = True
         elif c != " " and new_line:
-            result += "\n"
+            print("\n", end="")
             new_line = False
 
-    print(result)
+    print()
