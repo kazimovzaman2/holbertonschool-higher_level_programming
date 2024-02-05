@@ -4,4 +4,5 @@
 
 
 def lookup(obj):
-    return list(dir(obj))
+    """Doc of function"""
+    return (dir(obj))
