@@ -77,3 +77,15 @@ TypeError: list expected at most 1 argument, got 2
 >>> my_list.print_sorted()
 Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'str' and 'int'
+
+
+>>> my_list = (1, 2)
+>>> print(my_list)
+(1, 2)
+
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+AttributeError: 'tuple' object has no attribute 'print_sorted'
+
+>>> print(my_list)
+(1, 2)
