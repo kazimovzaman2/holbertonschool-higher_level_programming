@@ -17,4 +17,22 @@ Without Exception:
 
 >>> my_list = MyList([1, 2, 3])
 >>> print(my_list)
-[1, 2, 3]	
+[1, 2, 3]
+
+
+
+
+
+
+With Exception:
+
+
+
+>>> my_list = MyList(None)
+Traceback (most recent call last):
+TypeError: 'NoneType' object is not iterable
+
+
+>>> my_list = MyList([1, 2], [3, 4])
+Traceback (most recent call last):
+TypeError: list() takes at most 1 argument (2 given)
