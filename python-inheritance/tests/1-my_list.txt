@@ -29,6 +29,17 @@ Without Exception:
 
 
 
+>>> my_list[0] = 5
+>>> print(my_list)
+[5, 2, 3]
+
+
+>>> my_list.remove(5)
+>>> print(my_list)
+[2, 3]
+
+
+
 
 With Exception:
 
