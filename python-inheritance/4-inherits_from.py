@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 
-"""
-Module doc
-"""
+"""Module doc"""
 
 
 def inherits_from(obj, a_class):
-    """Same"""
+    """
+    Same
+    """
     if issubclass(type(obj), a_class) and type(obj) != a_class:
         return True
     return False
