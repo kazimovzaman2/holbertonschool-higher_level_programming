@@ -21,6 +21,10 @@ Without Exception:
 
 With Exception:
 
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
 TypeError: name must be an integer
