@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-import json
-
 
 """Documented Module"""
 
+
+import json
 
 def to_json_string(my_obj):
     """Documented function"""
