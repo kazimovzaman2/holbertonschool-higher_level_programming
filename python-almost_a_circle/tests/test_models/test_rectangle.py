@@ -14,13 +14,13 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle()
 
-    def test_no_arg(self):
+    def test_type_args(self):
         with self.assertRaises(TypeError):
             Rectangle(1)
-
-    def test_string_arg(self):
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
 
 
 if __name__ == "__main__":
