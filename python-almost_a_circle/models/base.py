@@ -6,14 +6,14 @@
 
 class Base:
     """Base class for all other classes that inherit from it"""
+
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        Initializes an instance of the Base class.
+        """Initializes an instance of the Base class.
 
-        Returns:
-            None
+        Args:
+            id (int): The identity of the new Base.
         """
         if id is not None:
             self.id = id

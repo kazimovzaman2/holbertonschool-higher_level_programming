@@ -2,19 +2,21 @@
 
 
 """Rectangle class in model package"""
-
-
-Base = __import__('base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
     """Rectangle class that inherits from Base class"""
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """
-        Initializes an instance of the Rectangle class.
 
-        Returns:
-            None
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """Initializes an instance of the Rectangle class.
+
+        Args:
+            width (int): The width of the Rectangle.
+            height (int): The height of the Rectangle.
+            x (int): The x coordinate of the Rectangle.
+            y (int): The y coordinate of the Rectangle.
+            id (int): The identity of the new Rectangle.
         """
         super().__init__(id=id)
         self.__width = width
