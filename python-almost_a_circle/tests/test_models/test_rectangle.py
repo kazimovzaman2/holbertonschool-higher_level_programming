@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Test for rectangle model"""
+import os
 import unittest
 from io import StringIO
 from unittest.mock import patch
@@ -121,9 +122,19 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
 
+        try:
+            os.remove("Square.json")
+        except:
+            pass
+
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
+
+        try:
+            os.remove("Square.json")
+        except:
+            pass
 
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as file:
