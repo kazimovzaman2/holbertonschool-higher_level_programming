@@ -10,6 +10,12 @@ Base = __import__('base').Base
 class Rectangle(Base):
     """Rectangle class that inherits from Base class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Initializes an instance of the Rectangle class.
+
+        Returns:
+            None
+        """
         super().__init__(id=id)
         self.__width = width
         self.__height = height
