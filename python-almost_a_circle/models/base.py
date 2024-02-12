@@ -37,6 +37,17 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """Deserialize a JSON string representation into a Python object.
+
+        Args:
+            json_string (str): The JSON string to be deserialized.
+        """
+        if json_string is None:
+            return []
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Saves a list of objects to a JSON file.
