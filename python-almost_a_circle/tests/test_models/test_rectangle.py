@@ -74,6 +74,32 @@ class TestBase(unittest.TestCase):
             r1.display()
             self.assertEqual(str_out.getvalue(), res)
 
+    def test_display_3(self):
+        r1 = Rectangle(5, 4, 1, 1)
+        res = "\n #####\n #####\n #####\n #####\n"
+        with patch("sys.stdout", new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
+    def test_display_4(self):
+        r1 = Rectangle(3, 2)
+        res = "###\n###\n"
+        with patch("sys.stdout", new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
+        r1.x = 4
+        res = "    ###\n    ###\n"
+        with patch("sys.stdout", new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
+        r1.y = 2
+        res = "\n\n    ###\n    ###\n"
+        with patch("sys.stdout", new=StringIO()) as str_out:
+            r1.display()
+            self.assertEqual(str_out.getvalue(), res)
+
 
 if __name__ == "__main__":
     unittest.main()
