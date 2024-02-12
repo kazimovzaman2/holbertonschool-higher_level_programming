@@ -101,15 +101,20 @@ class TestBase(unittest.TestCase):
             self.assertEqual(str_out.getvalue(), res)
 
     def test_to_dictionary(self):
-        r1 = Rectangle(3, 2)
+        r1 = Rectangle(3, 2, id=55)
         self.assertEqual(
-            r1.to_dictionary(), {"id": 9, "width": 3, "height": 2, "x": 0, "y": 0}
+            r1.to_dictionary(), {"id": 55, "width": 3, "height": 2, "x": 0, "y": 0}
         )
 
     def test_update(self):
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
+
+    def test_create(self):
+        r1_dictionary = {"x": 1, "y": 9, "id": 8, "height": 2, "width": 10}
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(str(r2), "[Rectangle] (8) 1/9 - 10/2")
 
 
 if __name__ == "__main__":
