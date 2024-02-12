@@ -19,4 +19,4 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.__x, self.__y, self.size)
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
