@@ -70,7 +70,8 @@ class Base:
         """Creates a new instance of the class based on the given dictionary.
 
         Args:
-            dictionary (dict): A dictionary containing the attributes of the instance.
+            dictionary (dict): A dictionary containing
+            the attributes of the instance.
         """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 2)
@@ -81,6 +82,12 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """
+        Loads instances from a JSON file and returns a list of instances.
+
+        Returns:
+            list: A list of instances loaded from the JSON file.
+        """
         filename = "{}.json".format(cls.__name__)
 
         try:
