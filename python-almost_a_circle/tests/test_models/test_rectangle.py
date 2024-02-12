@@ -100,6 +100,12 @@ class TestBase(unittest.TestCase):
             r1.display()
             self.assertEqual(str_out.getvalue(), res)
 
+    def test_to_dictionary(self):
+        r1 = Rectangle(3, 2)
+        self.assertEqual(
+            r1.to_dictionary(), {"id": 9, "width": 3, "height": 2, "x": 0, "y": 0}
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
