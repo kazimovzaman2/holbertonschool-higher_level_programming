@@ -125,6 +125,15 @@ class TestBase(unittest.TestCase):
                 '[{"id": 89, "width": 10, "height": 7, "x": 2, "y": 8}]',
             )
 
+    def test_save_to_file(self):
+        # r1 = Rectangle(10, 7, 2, 8, 89)
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(
+                file.read(),
+                "[]",
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
