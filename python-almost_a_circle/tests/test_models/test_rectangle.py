@@ -7,7 +7,7 @@ from models.rectangle import Rectangle
 
 class TestBase(unittest.TestCase):
     def test_rectangle(self):
-        r1 = Rectangle(1, 2)
+        r1 = Rectangle(1, 2, id=1)
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
