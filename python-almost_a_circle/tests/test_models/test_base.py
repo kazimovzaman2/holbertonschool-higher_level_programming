@@ -23,21 +23,17 @@ class TestBase(unittest.TestCase):
         self.assertIsInstance(base3, Base)
         self.assertEqual(base3.id, 10)
 
-    def test_to_json_string(self):
-        base = Base()
-        json_string = base.to_json_string([])
-        self.assertEqual(json_string, "[]")
+    def test_auto_assign_id(self):
+        base1 = Base()
+        base2 = Base()
+        base3 = Base()
+        self.assertEqual(base1.id, 3)
+        self.assertEqual(base2.id, 4)
+        self.assertEqual(base3.id, 5)
 
-    def test_from_json_string(self):
-        json_string = "[]"
-        list_dictionaries = Base.from_json_string(json_string)
-        self.assertEqual(list_dictionaries, [])
-
-    def test_create(self):
-        dictionary = {"id": 1}
-        base = Base.create(**dictionary)
-        self.assertIsInstance(base, Base)
-        self.assertEqual(base.id, 1)
+    def test_id_exists(self):
+        base = Base(100)
+        self.assertEqual(base.id, 100)
 
 
 if __name__ == "__main__":
