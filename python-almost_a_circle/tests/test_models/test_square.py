@@ -35,3 +35,12 @@ class TestBase(unittest.TestCase):
     def test_str(self):
         s0 = Square(1, id=66)
         self.assertEqual(str(s0), "[Square] (66) 0/0 - 1")
+
+    def test_to_dictionary(self):
+        s1 = Square(3, id=55)
+        self.assertEqual(s1.to_dictionary(), {"id": 55, "size": 3, "x": 0, "y": 0})
+
+    def test_update(self):
+        s0 = Square(1, 2, 3, 4)
+        s0.update(5, 6, 7, 8)
+        self.assertEqual(s0.id, 5)
