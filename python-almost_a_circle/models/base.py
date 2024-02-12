@@ -45,12 +45,11 @@ class Base:
             cls (class): The class of the objects.
             list_objs (list): The list of objects to be saved.
         """
-        list_dictionary = []
         if list_objs is None:
-            list_dictionary = list_objs
+            list_dictionary = []
         else:
-            for obj in list_objs:
-                list_dictionary.append(obj.to_dictionary())
+            list_dictionary = [obj.to_dictionary() for obj in list_objs]
 
-        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
+        filename = "{}.json".format(cls.__name__)
+        with open(filename, "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_dictionary))
