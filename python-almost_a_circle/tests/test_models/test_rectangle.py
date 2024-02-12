@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Test for rectangle model"""
 import unittest
+from io import StringIO
+from unittest.mock import patch
 from models.rectangle import Rectangle
 
 
@@ -43,6 +45,21 @@ class TestBase(unittest.TestCase):
             Rectangle(1, 2, -3)
         with self.assertRaises(ValueError):
             Rectangle(1, 2, 3, -4)
+
+    def test_area(self):
+        r0 = Rectangle(1, 2)
+        self.assertEqual(r0.area(), 2)
+
+    def test_str(self):
+        r0 = Rectangle(1, 2, id=66)
+        self.assertEqual(str(r0), "[Rectangle] (66) 0/0 - 1/2")
+
+    def test_display(self):
+        r0 = Rectangle(2, 2)
+        expected_output = "##\n##\n"
+        with patch("sys.stdout", new=StringIO()) as fake_out:
+            r0.display()
+            self.assertEqual(fake_out.getvalue(), expected_output)
 
 
 if __name__ == "__main__":
