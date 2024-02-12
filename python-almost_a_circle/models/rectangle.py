@@ -15,6 +15,11 @@ class Rectangle(Base):
             x (int): The x coordinate of the Rectangle.
             y (int): The y coordinate of the Rectangle.
             id (int): The identity of the new Rectangle.
+
+        Raises:
+            TypeError: If width, height, x, or y is not an integer.
+            ValueError: If width, or height is less than or equal to 0.
+            ValueError: If x, or y is less than 0.
         """
         self.__width = width
         self.__height = height
@@ -29,7 +34,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -42,7 +47,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -55,7 +60,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -68,8 +73,33 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+
+if __name__ == "__main__":
+
+    try:
+        Rectangle(10, "2")
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+
+    try:
+        r = Rectangle(10, 2)
+        r.width = -10
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+
+    try:
+        r = Rectangle(10, 2)
+        r.x = {}
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+
+    try:
+        Rectangle(10, 2, 3, -1)
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
