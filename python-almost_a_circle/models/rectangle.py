@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Rectangle class that inherits from Base class."""
-from models.base import Base
+# from models.base import Base
+Base = __import__("base").Base
 
 
 class Rectangle(Base):
@@ -84,8 +85,10 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
+        """Prints the displays of the Rectangle."""
         for i in range(self.__height):
             for _ in range(self.__width):
                 print("#", end="")
             if i != self.__height - 1:
                 print()
+        print()
