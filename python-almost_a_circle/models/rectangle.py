@@ -102,14 +102,12 @@ class Rectangle(Base):
                 print()
         print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates the attributes of the Rectangle instance."""
         if args:
-            try:
-                self.id = args[0]
-                self.width = args[1]
-                self.height = args[2]
-                self.x = args[3]
-                self.y = args[4]
-            except Exception:
-                pass
+            list_atr = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
