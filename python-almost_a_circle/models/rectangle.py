@@ -89,8 +89,13 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
-        """Prints the displays of the Rectangle."""
+        """Display the rectangle by printing it to the console."""
+        for _ in range(self.__y):
+            print()
+
         for i in range(self.__height):
+            for _ in range(self.__x):
+                print(" ", end="")
             for _ in range(self.__width):
                 print("#", end="")
             if i != self.__height - 1:
