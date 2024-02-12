@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-
-
-"""Base class in the model package"""
+"""Base class for all other classes in the model package."""
 
 
 class Base:
-    """Base class for all other classes that inherit from it"""
+    """Represents the Base class.
+
+    Base class for all other classes in the model package.
+
+    Attributes:
+        __nb_objects (int): The number of objects created.
+    """
 
     __nb_objects = 0
 
