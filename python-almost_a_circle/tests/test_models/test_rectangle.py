@@ -9,11 +9,18 @@ class TestBase(unittest.TestCase):
         r0 = Rectangle(1, 2)
         self.assertEqual(r0.width, 1)
         self.assertEqual(r0.height, 2)
+
+    def test_no_args(self):
         with self.assertRaises(TypeError):
-            r1 = Rectangle("1", 2)
-            r2 = Rectangle(1, "2")
-            r3 = Rectangle(1, 2, "3")
-            r4 = Rectangle(1, 2, 3, "4")
+            Rectangle()
+
+    def test_no_arg(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1)
+
+    def test_string_arg(self):
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
 
 
 if __name__ == "__main__":
