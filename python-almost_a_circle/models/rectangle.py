@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Rectangle class that inherits from Base class."""
 from models.base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -101,3 +102,11 @@ class Rectangle(Base):
             if i != self.__height - 1:
                 print()
         print()
+
+    def update(self, *args):
+        """Updates the attributes of the Rectangle instance."""
+        self.id = args[0]
+        self.width = args[1]
+        self.height = args[2]
+        self.x = args[3]
+        self.y = args[4]
