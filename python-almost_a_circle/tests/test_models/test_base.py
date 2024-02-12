@@ -10,6 +10,10 @@ class TestBase(unittest.TestCase):
         self.assertIsInstance(base, Base)
         self.assertEqual(base.id, 1)
 
+    def test_id_exists(self):
+        base = Base()
+        self.assertTrue(hasattr(base, "id"))
+
 
 if __name__ == "__main__":
     unittest.main()
