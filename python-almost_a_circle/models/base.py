@@ -75,7 +75,12 @@ class Base:
                 t.right(90)
 
         for rectangle in list_rectangles:
-            draw_rectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height)
+            draw_rectangle(
+                rectangle.x,
+                rectangle.y,
+                rectangle.width,
+                rectangle.height,
+            )
 
         for square in list_squares:
             draw_square(square.x, square.y, square.size)
