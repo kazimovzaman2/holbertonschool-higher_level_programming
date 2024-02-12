@@ -106,6 +106,11 @@ class TestBase(unittest.TestCase):
             r1.to_dictionary(), {"id": 9, "width": 3, "height": 2, "x": 0, "y": 0}
         )
 
+    def test_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
+
 
 if __name__ == "__main__":
     unittest.main()
