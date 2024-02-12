@@ -46,8 +46,11 @@ class Base:
             list_objs (list): The list of objects to be saved.
         """
         list_dictionary = []
-        for obj in list_objs:
-            list_dictionary.append(obj.to_dictionary())
+        if list_objs is None:
+            list_dictionary = list_objs
+        else:
+            for obj in list_objs:
+                list_dictionary.append(obj.to_dictionary())
 
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_dictionary))
