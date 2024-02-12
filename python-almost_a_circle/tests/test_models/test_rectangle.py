@@ -123,7 +123,7 @@ class TestBase(unittest.TestCase):
             self.assertEqual(file.read(), "[]")
 
         try:
-            os.remove("Square.json")
+            os.remove("Rectangle.json")
         except:
             pass
 
@@ -132,7 +132,7 @@ class TestBase(unittest.TestCase):
             self.assertEqual(file.read(), "[]")
 
         try:
-            os.remove("Square.json")
+            os.remove("Rectangle.json")
         except:
             pass
 
