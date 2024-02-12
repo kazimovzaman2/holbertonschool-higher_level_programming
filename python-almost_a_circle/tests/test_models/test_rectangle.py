@@ -118,6 +118,11 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(r2), "[Rectangle] (89) 3/4 - 1/2")
 
     def test_save_to_file(self):
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
@@ -136,11 +141,33 @@ class TestBase(unittest.TestCase):
         except:
             pass
 
-        Rectangle.save_to_file([Rectangle(1, 2)])
+        Rectangle.save_to_file([Rectangle(1, 2, id=13)])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(
-                file.read(), '[{"id": 10, "width": 1, "height": 2, "x": 0, "y": 0}]'
+                file.read(), '[{"id": 13, "width": 1, "height": 2, "x": 0, "y": 0}]'
             )
+
+    def test_load_from_file1(self):
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+
+        self.assertEqual(Rectangle.load_from_file(), [])
+
+    def test_load_from_file_2(self):
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+
+        r1 = Rectangle(5, 5)
+
+        inp = [r1]
+        Rectangle.save_to_file(inp)
+        out = Rectangle.load_from_file()
+
+        self.assertEqual(inp[0].__str__(), out[0].__str__())
 
 
 if __name__ == "__main__":
