@@ -67,9 +67,30 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Creates a new instance of the class based on the given dictionary.
+
+        Args:
+            dictionary (dict): A dictionary containing the attributes of the instance.
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 2)
         elif cls.__name__ == "Square":
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = "{}.json".format(cls.__name__)
+
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                json_string = f.read()
+                list_dicts = cls.from_json_string(json_string)
+                instances = []
+                for d in list_dicts:
+                    instance = cls.create(**d)
+                    instances.append(instance)
+                return instances
+        except IOError:
+            return []
