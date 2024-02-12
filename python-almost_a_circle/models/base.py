@@ -35,5 +35,4 @@ class Base:
         """
         if list_dictionaries is None:
             return "[]"
-        else:
-            json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
