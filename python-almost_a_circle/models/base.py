@@ -5,6 +5,7 @@
 
 
 class Base:
+    """Base class for all other classes that inherit from it"""
     __nb_objects = 0
 
     def __init__(self, id=None):
