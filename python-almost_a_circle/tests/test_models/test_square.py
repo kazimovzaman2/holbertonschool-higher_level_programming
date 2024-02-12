@@ -12,6 +12,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(s0.x, 2)
         self.assertEqual(s0.y, 3)
         self.assertEqual(s0.id, 4)
+        s1 = Square(1, 2, id=344)
+        self.assertEqual(s1.size, 1)
+        self.assertEqual(s1.x, 2)
+        s2 = Square(1, 2, 3, id=384)
+        self.assertEqual(s2.size, 1)
+        self.assertEqual(s2.x, 2)
+        self.assertEqual(s2.y, 3)
 
     def test_type_errors(self):
         with self.assertRaises(TypeError):
