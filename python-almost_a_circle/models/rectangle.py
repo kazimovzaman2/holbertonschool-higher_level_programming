@@ -105,8 +105,9 @@ class Rectangle(Base):
 
     def update(self, *args):
         """Updates the attributes of the Rectangle instance."""
-        self.id = args[0]
-        self.width = args[1]
-        self.height = args[2]
-        self.x = args[3]
-        self.y = args[4]
+        if args:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
