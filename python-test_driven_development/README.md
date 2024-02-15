@@ -1,6 +1,6 @@
 # Python: Test Driven Development
 
-This repository contains various Python scripts with associated tests.
+This folder contains various Python scripts with associated tests.
 
 ## Scripts Overview
 
