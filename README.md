@@ -9,4 +9,4 @@ Contributions to this repository are welcome. Feel free to submit pull requests 
 
 ## License
 
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details about it.
