@@ -5,5 +5,5 @@ CREATE TABLE IF NOT EXISTS `cities` (
   `id` INT AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
   `name` VARCHAR(256) NOT NULL,
   `state_id` INT NOT NULL,
-  FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
+  FOREIGN KEY (`state_id`) REFERENCES `states`(`id`)
 );
