@@ -24,14 +24,11 @@ if __name__ == "__main__":
 
     session = Session(engine)
 
-    count = 0
-
-    for state in session.query(State).filter(State.name.contains(sys.argv[4])):
-        count += 1
+    state = session.query(State).filter(State.name == sys.argv[4]).first()
     
-    if count == 0:
+    if state is None:
         print("Not found")
     else:
-        print(count)
+        print("{}".format(state.id))
 
     session.close()
