@@ -18,17 +18,17 @@ if __name__ == "__main__":
 
     cur.execute(
         """
-                SELECT cities.id, cities.name FROM cities
+                SELECT cities.name FROM cities
                 JOIN states ON cities.state_id = states.id
                 WHERE states.name LIKE BINARY %s
-                ORDER BY id
+                ORDER BY cities.id
                 """,
         (sys.argv[4],),
     )
 
     query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
+    if query_rows is not None:
+        print(", ".join([row[0] for row in query_rows]))
 
     cur.close()
     conn.close()
