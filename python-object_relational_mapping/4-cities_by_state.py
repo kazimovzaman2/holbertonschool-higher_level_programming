@@ -18,7 +18,9 @@ if __name__ == "__main__":
 
     cur.execute(
         """
-                SELECT * FROM cities ORDER BY id
+                SELECT cities.id, city.name, states.name FROM cities
+                JOIN states ON cities.state_id = states.id
+                ORDER BY id
                 """
     )
     query_rows = cur.fetchall()
